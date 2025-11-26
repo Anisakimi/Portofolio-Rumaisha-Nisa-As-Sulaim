@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Portfolio</title>
+
+<style>
+/* ===== BASE ===== */
+body{margin:0;font-family:"Poppins",sans-serif;background:linear-gradient(135deg,#0a0d24,#1b1f3b);color:#fff;scroll-behavior:smooth;}
+
+nav{
+  position:fixed;top:0;width:100%;display:flex;justify-content:center;
+  align-items:center;gap:40px;padding:20px 40px;backdrop-filter:blur(10px);
+  background:rgba(10,13,36,.3);z-index:10;border-bottom:1px solid rgba(255,255,255,.1);
+}
+nav a{color:#c6caff;text-decoration:none;margin:0 25px;font-weight:500;transition:.3s;}
+nav a:hover{color:#8f7bff;}
+
+header{
+  padding:150px 20px 120px 20px;text-align:center;animation:fadeIn 1.5s ease;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+}
+header h1{
+  font-size:3.5rem;margin-bottom:10px;background:linear-gradient(90deg,#6b5bff,#9d4dff);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+header p{font-size:1.2rem;opacity:.8;}
+
+section{padding:100px 20px;max-width:1100px;margin:auto;text-align:center;animation:fadeUp 1s ease;}
+h2{font-size:2rem;margin-bottom:25px;color:#9aa5ff;display:inline-block;text-align:center;}
+
+.card{
+  background:rgba(255,255,255,.08);padding:25px;border-radius:15px;
+  box-shadow:0 0 15px rgba(0,0,0,.3);backdrop-filter:blur(6px);transition:.4s;
+  color:#fff !important;text-decoration:none !important;
+}
+.card:hover{transform:translateY(-8px);box-shadow:0 0 25px rgba(140,92,255,.7);color:#d5d5ff !important;}
+
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;margin-top:20px;
+}
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="logo">MyPortfolio</div>
+  <div>
+    <a href="#about">Latar Belakang</a>
+    <a href="#organization">Organisasi</a>
+    <a href="#skills">Keahlian</a>
+    <a href="#portfolio">Portofolio</a>
+    <a href="#contact">Kontak</a>
+  </div>
+</nav>
+
+<!-- ================= HEADER ================= -->
+<header>
+
+<div style="display:flex;justify-content:center;align-items:center;gap:55px;flex-wrap:wrap;">
+
+<!-- TEXT -->
+<div style="max-width:600px;text-align:left;">
+  <h1>Rumaisha Nisa As-Sulaim</h1>
+  <p style="margin-top:5px;font-size:1.1rem;opacity:.9;line-height:1.6;text-align:justify;">
+    Hallo, semuanya! Nama saya adalah Rumaisha Nisa As-Sulaim dan saya lahir di Kota Semarang pada tanggal 21 Mei 2007.
+    Saat ini saya bersekolah di SMK Negeri 11 Semarang jurusan GIM dan tertarik pada UI/UX serta ilustrasi 2D untuk aset gim.
+  </p>
+  <p style="margin-top:10px;font-size:1.1rem;opacity:.9;line-height:1.6;text-align:justify;">
+    Saya belajar bahwa kolaborasi adalah kunci. Bekerja dalam tim membuat ide berkembang lebih besar,
+    dan saya juga terus melatih kemampuan public speaking agar lebih percaya diri dalam kesempatan mendatang.
+  </p>
+</div>
+
+<!-- PHOTO -->
+<div style="width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.1);border:3px solid #8f7bff;overflow:hidden;">
+  <img src="Foto osis.jpg" style="width:100%;height:100%;object-fit:cover;">
+</div>
+<footer style="
+  margin-top: 80px;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  border-top: 1px solid rgba(49, 35, 124, 0.2);
+">
+
+  <p style="margin-bottom: 12px; opacity: 0.9;">
+    Terima kasih telah mengunjungi portofolio saya.
+  </p>
+
+  <a href="CV Rumaisha Nisa .png" download
+     style="
+       color: #7f6aff;
+       text-decoration: none;
+       font-weight: 600;
+       font-size: 1rem;
+     ">
+    Unduh Curriculum Vitae (CV) Rumaisha Nisa 
+  </a>
+</footer>
+
+    </div>
+  </header>
+</div>
+</header>
+
+<style>
+  /* Card Edu Style */
+  .edu-box {
+    background-color: #161238;    
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 1020px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+  }
+
+  .edu-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .edu-item h3 span {
+    font-weight: 300;
+  }
+
+  .edu-item p {
+    margin: 5px 0 15px;
+    font-size: 1rem;
+    opacity: 0.9;
+  }
+
+  .edu-box hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.6);
+    margin: 15px 0;
+  }
+</style>
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <section id="about">
+  <h2>Latar Belakang</h2>
+
+  <div class="edu-box">
+    <div class="edu-item">
+      <h3>Sekolah Dasar <span>|</span> <strong>2015 - 2021</strong></h3>
+      <p style="text-align: left; margin: 0 0 15px 0;">SD NEGERI 03 PUDAKPAYUNG</p>
+      <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.9; line-height: 1.6; text-align: justify;">
+        Di masa ini, saya mulai beradaptasi dengan berbagai orang dan pembelajaran, juga membuka mata soal berbagai hal. Saya juga aktif di lingkungan sekolah, seperti pramuka, dokter kecil, hingga beberapa perlombaan. Di jenjang ini, saya bersyukur dapat meraih beberapa prestasi, seperti Juara I Lomba Sesorah tingkat Kota Semarang dan Juara Harapan I Parade Puisi tingkat Kota Semarang. Dengan demikian, saya dapat berbicara jelas, hangat, dan bermakna sehingga saya dapat berkontribusi secara efektif di setiap kesempatan.
+      </p>
+    </div>
+
+    <hr>
+
+    <div class="edu-item">
+      <h3>Sekolah Menengah Pertama <span>|</span> <strong>2021 - 2023</strong></h3>
+      <p style="text-align: left; margin: 0 0 15px 0;">SMP NEGERI 21 SEMARANG</p>
+      <p style="margin-top: 20px; font-size: 1.1rem; opacity: 0.9; line-height: 1.6; text-align: justify;">
+        Di masa Sekolah Menengah Pertama, saya aktif mengikuti berbagai kegiatan sekolah dan bergabung dalam organisasi seperti Rohis, MPK, dan Jurnalistik. Melalui Jurnalistik, saya mulai mengenal dunia desain grafis ketika ikut membantu menyusun majalah BIS PATAS. Dari perjalanan itu, saya bersyukur dapat meraih beberapa prestasi, seperti Juara II Lomba Pidato Semesta dan Juara III Lomba Jurnalistik Aplikasi. Pengalaman tersebut juga membentuk rasa tanggung jawab dan kepemimpinan saya ketika dipercaya menjadi wakil di Organisasi Rohis.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="organization">
+  <h2>Organisasi</h2>
+
+  <div class="edu-box">
+    <div class="edu-item">
+      <h3>Pengurus OSIS <span>|</span> <strong>Seksi Bidang 1</strong></h3>
+      <ul style="margin-top: 10px; text-align: left; line-height: 1.7; opacity: 0.9;">
+        <li>Menjadi Wakil Ketua Pelaksanaan Hari Santri</li>
+        <li>Mengkoordinir kegiatan keagamaan di sekolah</li>
+        <li>Penanggung Jawab saat MPLS</li>
+        <li>Mengatur jalannya program sekolah (Jumat Rutin)</li>
+        <li>Menjadi MC saat acara keagamaan di sekolah</li>
+      </ul>
+    </div>
+
+<div style="
+  width: 100%;
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  justify-items: center;
+">
+
+  <img 
+    src="3.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+  <img 
+    src="1.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+  <img 
+    src="4.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+  <img 
+    src="5.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+  <img 
+    src="2.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+  <img 
+    src="6.jpg"
+    style="width: 100%; max-width: 260px; height: 160px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);"
+  >
+
+</div>
+<p style="
+  text-align: center;
+  margin-top: 15px;
+  font-size: 1rem;
+  opacity: 0.8;
+  letter-spacing: 1px;
+">
+  Dokumentasi
+</p>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+<section id="skills">
+<h2>Keahlian</h2>
+<div class="grid">
+  <div class="card">Adobe Illustrator</div>
+  <div class="card">Clip Studio</div>
+  <div class="card">Figma</div>
+  <div class="card">Canva</div>
+  <div class="card">Public Speaking</div>
+  <div class="card">Microsoft Word</div>
+</div>
+</section>
+
+<!-- ================= PORTFOLIO ================= -->
+ <section id="portfolio">
+  <h2>Portofolio</h2>
+  <div class="grid">
+    <a href="proyek2.html"class="card">Ilustrasi 2D</a>
+    <a class="card" href="https://www.figma.com/design/enYrzEW0qnnhWVdQXRAvxB/Rumaisha-Nisa-As-Sulaim_SMK-NEGERI-11-MIDDLLE?node-id=51-19&t=UFvmbQLDNPljrEJv-1" target="_blank">Marketplace Tas (Figma)</a>
+    <a class="card" href="https://www.figma.com/design/hPpcyHBknGxppKUjklKqOb/Rumaisha-Nisa-SMK-NEGERI-11?node-id=834-360&t=bySUTjtx12OrUaGx-1" target="_blank">Marketplace Food (Figma)</a>
+    <a href="proyek1.html" class="card">Desain Grafis</a>
+    <a class="card" href="https://drive.google.com/drive/folders/1pOML89sIH7AOsYkJsjSl_e-Z3xgTEWXF?usp=drive_link" target="_blank">Game Design Documents</a>
+  </div>
+  <footer style="
+  margin-top: 80px;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #a3a2a2;
+  border-top: 1px solid rgba(49, 35, 124, 0.2);
+">
+  <p style="margin-bottom: 12px; opacity: 0.9;">
+    Silakan klik salah satu kartu untuk melihat portofolio saya.
+  </p>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="card">
+  <p>Email: <a href="mailto:linasherlina@gmail.com">linasherlina@gmail.com</a></p>
+  <p>Instagram: <a href="https://www.instagram.com/nis_nisaa/">nis_nisaa</a></p>
+  <p>WhatsApp: <a href="https://wa.me/628812472313">+62 881-2472-313</a></p>
+</div>
+</section>
+
+<footer style="width:100%;padding:40px 20px;background:#0f0c29;text-align:center;margin-top:100px;">
+  <p style="margin:0;opacity:.8">Pelajar SMK Negeri 11 Semarang</p>
+  <p style="margin-top:10px;opacity:.5;">© 2025 All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
+

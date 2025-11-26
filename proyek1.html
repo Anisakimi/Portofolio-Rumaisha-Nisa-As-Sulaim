@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desain Grafis (Canva) - Galeri</title>
+  <style>
+    :root {
+      --bg: #2b1b46;
+      --card-bg: #ffffff;
+      --muted: #777;
+      --gap: 28px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: #222;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 1100px;
+      max-width: 100%;
+    }
+
+    header {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 0.6px;
+    }
+
+    header p {
+      color: rgba(255,255,255,0.85);
+      margin-top: 6px;
+    }
+
+    /* ===== Grid Galeri ===== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--gap);
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 560px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 18px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 8px;
+      overflow: hidden;
+      display: block;
+      background: linear-gradient(180deg,#eee,#ddd);
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      padding-top: 6px;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .note {
+      color: rgba(255,255,255,0.85);
+      font-size: 13px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <body>
+<div class="container">
+
+  <header>
+    <a href="index.html" class="back-btn"> ← Kembali</a>
+    <h1>DESAIN GRAFIS</h1>
+    <p>(Canva)</p>
+  </header>
+
+    <main>
+      <section class="grid" aria-label="Galeri Desain Canva">
+        <!-- Card 1 -->
+        <article class="card">
+          <a class="thumb" href="Benner 1.png" target="_blank" aria-label="Lihat desain 1">
+            <img src="Benner 1.png" alt="Desain 1">
+          </a>
+          <div class="caption">Desain banner VTuber ini memiliki tema ceria dan futuristik, warna biru memberi kesan segar.</div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <a class="thumb" href="Benner 2.png" target="_blank" aria-label="Lihat desain 2">
+            <img src="Benner 2.png" alt="Desain 2">
+          </a>
+          <div class="caption">Desain banner VTuber ini bertema toko kue, menampilkan karakter manis dan ramah dengan nuansa pink yang feminin.</div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <a class="thumb" href="Benner 3.png" target="_blank" aria-label="Lihat desain 3">
+            <img src="Benner 3.png" alt="Desain 3">
+          </a>
+          <div class="caption">Desain banner karakter VTuber ini  bertema guru, lembut dan elegan dengan warna netral cokelat yang hangat.</div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card">
+          <a class="thumb" href="Tumbnail 1.png" target="_blank" aria-label="Lihat desain 4">
+            <img src="Tumbnail 1.png" alt="Desain 4">
+          </a>
+          <div class="caption">Desain banner karakter VTuber ini bertema serigala, memiliki gaya maskulin dan kuat dengan warna gelap dan bulu khas.</div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card">
+          <a class="thumb" href="Tumbnail 2.png" target="_blank" aria-label="Lihat desain 5">
+            <img src="Tumbnail 2.png" alt="Desain 5">
+          </a>
+          <div class="caption">Desain benner karakter VTuber ini terkesan elegan dan berkelas dengan kostum putih dan emas yang feminim.</div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card">
+          <a class="thumb" href="tUMBNAIL 3.png" target="_blank" aria-label="Lihat desain 6">
+            <img src="tUMBNAIL 3.png" alt="Desain 6">
+          </a>
+          <div class="caption">Desain banner VTuber ini bergaya chibi bertema petualang dengan berbagai pose, sederhana namun detail.</div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card">
+          <a class="thumb" href="infografis 3.jfif" target="_blank" aria-label="Lihat desain 7">
+            <img src="infografis 3.jfif" alt="Desain 7" style="object-position:center top;">
+          </a>
+          <div class="caption">Desain ini adalah infografis refleksi pembelajaran matematika, dibuat dengan tampilan visual menarik dengan menggunakan Canva.</div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="card">
+          <a class="thumb" href="Poster Festival Jajan Tradisional Ilustrasi Klasik Cokelat.png" target="_blank" aria-label="Lihat desain 8">
+            <img src="Poster Festival Jajan Tradisional Ilustrasi Klasik Cokelat.png" alt="Desain 8">
+          </a>
+          <div class="caption">Desain poster promosi jamu dengan nuansa hangat cokelat, dibuat menggunakan Canva.</div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="card">
+          <a class="thumb" href="infografis 2.jfif" target="_blank" aria-label="Lihat desain 9">
+            <img src="infografis 2.jfif" alt="Desain 9">
+          </a>
+          <div class="caption">Desain infografis ini bertema Kota Semarang yang menampilkan keunikan kota, dibuat dengan tampilan visual menarik dengan menggunakan Canva.</div>
+        </article>
+      </section>
+
+      <p class="note">
+    Klik gambar untuk melihat foto penuh. File ada di <code>images</code> 
+</p>
+
