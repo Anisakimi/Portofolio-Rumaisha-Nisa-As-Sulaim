@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Illustrasi 2D</title>
+<style>
+  :root{--bg:#231933;--btn-bg:#fff;--dot:#777;}
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--bg);
+    font-family: "Poppins", sans-serif;
+    color:#fff;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 16px;
+  }
+  .wrap{ width:100%; max-width:1000px; text-align:center; }
+
+  h1{ margin:0 0 18px 0; font-size:22px; }
+
+  .carousel-container{ position:relative; }
+
+  .slider{
+    overflow:hidden;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+    background:#26193a;
+  }
+
+  /* slides sebagai flex row; tiap gambar pakai min-width:100% agar menempati satu frame */
+  .slides{
+    display:flex;
+    transition:transform .6s ease;
+    will-change:transform;
+  }
+  .slides img{
+    display:block;
+    min-width:100%;
+    width:100%;
+    height:520px;
+    object-fit:contain;
+    background:linear-gradient(180deg,#261e44,#321d4d);
+    flex-shrink:0;
+  }
+
+  .btn{
+    position:absolute; top:50%; transform:translateY(-50%);
+    background:var(--btn-bg); color:#27193a; border:none;
+    padding:10px 14px; cursor:pointer; border-radius:10px;
+    font-size:20px; font-weight:700; opacity:0.98;
+  }
+  #prev{ left:12px; }
+  #next{ right:12px; }
+
+  .dots{ margin-top:12px; }
+  .dots span{
+    display:inline-block; width:11px; height:11px; border-radius:50%;
+    background:var(--dot); margin:0 6px; cursor:pointer; transition:.2s;
+  }
+  .dots span.active{ background:#fff; transform:scale(1.06); }
+
+  @media (max-width:700px){ .slides img{ height:380px } }
+  @media (max-width:420px){ .slides img{ height:300px } .btn{ padding:8px 10px; font-size:18px } }
+</style>
+</head>
+<body>
+  <body>
+<div class="container">
+
+  <header>
+    <a href="index.html" class="back-btn"> ← Kembali</a>
+  </header>
+  <div class="wrap">
+    <h1>Ilustrasi 2D </h1>
+
+    <div class="carousel-container">
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <!-- GANTI NAMA FILE GAMBAR DI SINI (letakkan di folder "images/") -->
+          <img src="c:\Users\server\Documents\NISA SMK 11 SEMARANG\XI GIM 1\pramagang\Desain Vtuber Nisaa.png" alt="1" onerror="this.onerror=null;this.src='cantik anime fiks.png'">
+          <img src="bary.jpeg" alt="2" onerror="this.onerror=null;this.src='cantik anime fiks.png'">
+          <img src="penyihir png.png" alt="3" onerror="this.onerror=null;this.src='penyihir png.png'">
+          <img src="Loading.png" alt="4" onerror="this.onerror=null;this.src='Loading.png'">
+          <img src="bg_mars[1][1].jpg" alt="5" onerror="this.onerror=null;this.src='bg_mars[1][1].jpg'">
+          <img src="background ungu.png" alt="6" onerror="this.onerror=null;this.src='background ungu.png'">
+          <img src="alien lucu.png" alt="7" onerror="this.onerror=null;this.src='alien lucu.png'">
+          <img src="Aset Gim alien hijau.png" alt="8" onerror="this.onerror=null;this.src='Aset Gim alien hijau.png'">
+          <img src="monster.png" alt="9" onerror="this.onerror=null;this.src='monster.png'">
+          <img src="c:\Users\server\Documents\NISA SMK 11 SEMARANG\gim\gdd\kkl.png" alt="10" onerror="this.onerror=null;this.src='c:\Users\server\Documents\NISA SMK 11 SEMARANG\gim\gdd\kkl.png'">
+          <img src="pistol alien.png baru.png" alt="11" onerror="this.onerror=null;this.src='pistol alien.png baru.png'">
+        </div>
+      </div>
+
+      <button id="prev" class="btn" aria-label="Sebelumnya">&#10094;</button>
+      <button id="next" class="btn" aria-label="Berikutnya">&#10095;</button>
+
+      <div class="dots" id="dots" aria-hidden="false"></div>
+    </div>
+  </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const slidesBox = document.getElementById('slides');
+  const slides = slidesBox ? slidesBox.querySelectorAll('img') : [];
+  const dotsWrap = document.getElementById('dots');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  const slider = document.getElementById('slider');
+  let index = 0;
+  const total = slides.length;
+  let autoTimer = null;
+  const AUTO_DELAY = 5000; // 5 detik (lebih pelan)
+
+  if(!slides || total === 0){
+    console.warn('Tidak ada gambar. Pastikan folder images/ berisi file dan path benar.');
+    return;
+  }
+
+  // buat dot indikator
+  for(let i=0;i<total;i++){
+    const s = document.createElement('span');
+    s.dataset.index = i;
+    s.addEventListener('click', ()=> { goTo(i); resetAuto(); });
+    dotsWrap.appendChild(s);
+  }
+  const dots = dotsWrap.querySelectorAll('span');
+  dots[0].classList.add('active');
+
+  function update(){
+    slidesBox.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(d=>d.classList.remove('active'));
+    if(dots[index]) dots[index].classList.add('active');
+  }
+
+  function next(){ index = (index + 1) % total; update(); }
+  function prev(){ index = (index - 1 + total) % total; update(); }
+  function goTo(i){ index = i % total; update(); }
+
+  nextBtn.addEventListener('click', ()=>{ next(); resetAuto(); });
+  prevBtn.addEventListener('click', ()=>{ prev(); resetAuto(); });
+
+  // auto slide
+  function startAuto(){
+    stopAuto();
+    autoTimer = setInterval(next, AUTO_DELAY);
+  }
+  function stopAuto(){
+    if(autoTimer){ clearInterval(autoTimer); autoTimer = null; }
+  }
+  function resetAuto(){ stopAuto(); startAuto(); }
+
+  // pause saat hover supaya pengguna bisa lihat lama
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  // mulai
+  update();
+  startAuto();
+});
+</script>
+</body>
+</html>
+
+
